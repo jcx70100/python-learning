@@ -1,7 +1,7 @@
 # designed by cxjiang
 
 # 需要改进的地方
-#1. 输入是非数字的情况
+#1. 输入是非数字的情况 try-except
 #2. 名称太长导致的打印不对齐
 #3. 手动添加字典的键值，拓展用户信息维度
 
@@ -89,8 +89,11 @@ cards = []
 
 while True:
     # 2. 获取用户输入
-    num = int(input("请输入您需要的功能："))
-
+    try:
+        num = int(input("请输入您需要的功能："))
+    except:
+        print("您的输入有误，请重新输入！")
+        continue
     # 3. 执行用户的输入
     if num == 1: #添加名片
         add_card()
