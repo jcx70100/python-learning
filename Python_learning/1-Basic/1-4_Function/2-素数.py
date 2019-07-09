@@ -32,12 +32,11 @@ while True:
         begin_num = int(input("请输入数据范围最小值："))
         end_num = int(input("请输入数据范围最大值："))
     except:
-        break
         print("您的输入有误，请重新输入！")
-
-            # 输出范围内的素数
+        continue       
+    
     if begin_num == 0 and end_num == 0:
         break
-    
+    # 输出范围内的素数
     prime(begin_num,end_num)
     print(prime_number)
