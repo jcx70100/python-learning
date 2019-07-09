@@ -5,16 +5,16 @@
 
 def date_number(date):
     num = 0
-    leap_date = (31,28,31,30,31,30,31,31,30,31,30,31) #闰年
+    leap_date = (31,28,31,30,31,30,31,31,30,31,30,31) #闰年每月天数
     
-    for item in leap_date[0:int(date[4:6])-1]:
+    for item in leap_date[0:int(date[4:6])-1]: #计算当月之前的天数
         num += item
-    num += int(date[6:])
+    num += int(date[6:]) #加上当月天数
     if leap_year(int(date[0:4])) is True: #是闰年
         return num
-    elif int(date[4:6]) > 2:
+    elif int(date[4:6]) > 2: # 不是闰年，且月份大于2，总天数+2（平年天数）
         return num+2
-    else:
+    else:   # 不是闰年，但是属于1月份
          return num
     
 
